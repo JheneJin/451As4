@@ -128,7 +128,6 @@ print(f"P(R|-c, -s, w) = <{probR_given_notc[True]:.4f}, {probR_given_notc[False]
 
 stateArr = ["S1", "S2", "S3", "S4"]
 headerStr = "   "
-rowStr = ""
 print("\nPart B. The transition probability matrix")
 for i in range(len(stateArr)):
     #add elements of stateArr for header
@@ -136,13 +135,14 @@ for i in range(len(stateArr)):
 print(headerStr)
 
 for i in range(rows):
+    rowStr = ""
     #add stateArr at the beginning
     rowStr += stateArr[i]
     for j in range(columns):
         #add every element in Q's row to rowStr
         rowStr += " " + f"{Q[i][j]:.4f}"
     print(rowStr)
-    rowStr = ""
+
 
 print("\nPart C. The probability for the query P(C|-s, w)")
 #print out the probability of C
